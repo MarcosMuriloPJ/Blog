@@ -1,0 +1,286 @@
+{
+	"info": {
+		"_postman_id": "1cb05359-49b6-4c89-919a-db167268e820",
+		"name": "Blog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2051253"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Registrar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"marcos\",\r\n    \"password\": \"123\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/user/register",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"register"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST \"http://localhost:5000/api/user/register\" \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -H \"Accept: application/json\" \\\r\n  -d '{\r\n    \"username\": \"usuario_teste\",\r\n    \"password\": \"senha123\"\r\n  }'"
+					},
+					"response": []
+				},
+				{
+					"name": "Logar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"marcos\",\r\n    \"password\": \"123\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/user/login",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST \"http://localhost:5000/api/user/login\" \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -H \"Accept: application/json\" \\\r\n  -d '{\r\n    \"username\": \"usuario_teste\",\r\n    \"password\": \"senha123\"\r\n  }'"
+					},
+					"response": []
+				},
+				{
+					"name": "Logar (ERRO)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"usuario_inexistente\",\r\n    \"password\": \"senha_errada\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/user/login",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST \"http://localhost:5000/api/user/login\" \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -H \"Accept: application/json\" \\\r\n  -d '{\r\n    \"username\": \"usuario_inexistente\",\r\n    \"password\": \"senha_errada\"\r\n  }'"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "Listar",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/posts",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"posts"
+							]
+						},
+						"description": "Generated from cURL: curl -X GET \"http://localhost:5000/api/posts\" \\\r\n  -H \"Accept: application/json\""
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Meu Primeiro Post\",\r\n    \"content\": \"Este é o conteúdo do meu primeiro post no blog. Aqui posso escrever sobre qualquer assunto interessante.\",\r\n    \"userId\": \"63df9860-5172-4205-89bd-2481ef26bb1a\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/posts",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"posts"
+							]
+						},
+						"description": "Generated from cURL: curl -X POST \"http://localhost:5000/api/posts\" \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -H \"Accept: application/json\" \\\r\n  -d '{\r\n    \"title\": \"Meu Primeiro Post\",\r\n    \"content\": \"Este é o conteúdo do meu primeiro post no blog. Aqui posso escrever sobre qualquer assunto interessante.\",\r\n    \"userId\": \"cole-aqui-o-guid-do-usuario\"\r\n  }'"
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Título Atualizado do Post\",\r\n    \"content\": \"Conteúdo atualizado do post com novas informações e melhorias.\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/posts/e32edfe1-7ab8-4f27-b4d7-7dae3f587456",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"e32edfe1-7ab8-4f27-b4d7-7dae3f587456"
+							]
+						},
+						"description": "Generated from cURL: curl -X PUT \"http://localhost:5000/api/posts/GUID-DO-POST\" \\\r\n  -H \"Content-Type: application/json\" \\\r\n  -H \"Accept: application/json\" \\\r\n  -d '{\r\n    \"title\": \"Título Atualizado do Post\",\r\n    \"content\": \"Conteúdo atualizado do post com novas informações e melhorias.\"\r\n  }'"
+					},
+					"response": []
+				},
+				{
+					"name": "Apagar",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/posts/e32edfe1-7ab8-4f27-b4d7-7dae3f587456",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"e32edfe1-7ab8-4f27-b4d7-7dae3f587456"
+							]
+						},
+						"description": "Generated from cURL: curl -X DELETE \"http://localhost:5000/api/posts/GUID-DO-POST\" \\\r\n  -H \"Accept: application/json\""
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:5000",
+			"type": "default"
+		}
+	]
+}
